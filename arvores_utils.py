@@ -1,4 +1,4 @@
-from anytree import Node,RenderTree
+from anytree import Node
 def processar_arquivo(caminho_arquivo):
     with open(caminho_arquivo, "r") as f: 
         for linha in f:                   
@@ -45,7 +45,21 @@ def auxAltura(C):
         return 0
     else:
         return max(altura(C[0]), auxAltura(C[1:]))
+
+
+def quantidadeNos(N):
+    return 1+ AuxNos(N.children)
+
+def AuxNos(C):
+    if not C:
+        return 0
+    else:
+        return quantidadeNos(C[0])+AuxNos(C[1:])
+
 raiz = construirNodo(gerador_arvore)
 soma_arvore = somaArvore(raiz)
 altura_arvore= altura(raiz)
+num_Nos = quantidadeNos(raiz)
+print(somaArvore)
 print(altura_arvore)
+print(num_Nos)
