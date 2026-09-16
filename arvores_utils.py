@@ -55,11 +55,3 @@ def AuxNos(C):
         return 0
     else:
         return quantidadeNos(C[0])+AuxNos(C[1:])
-
-raiz = construirNodo(gerador_arvore)
-soma_arvore = somaArvore(raiz)
-altura_arvore= altura(raiz)
-num_Nos = quantidadeNos(raiz)
-print(somaArvore)
-print(altura_arvore)
-print(num_Nos)
